@@ -1,0 +1,5 @@
+namespace Inheritance
+{
+    class Vehicle{}
+
+}
