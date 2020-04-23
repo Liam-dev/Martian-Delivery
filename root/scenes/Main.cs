@@ -20,5 +20,9 @@ public class Main : Node2D
         {
             GD.Print("Enter pressed");
         }
+        else if (Input.IsActionJustPressed("ui_cancel"))
+        {
+            GetTree().Quit();
+        }
     }
 }
