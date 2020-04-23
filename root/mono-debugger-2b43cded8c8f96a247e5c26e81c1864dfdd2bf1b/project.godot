@@ -15,14 +15,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="EP Game"
-run/main_scene="res://scenes/Main.tscn"
-config/icon="res://assets/icon.png"
+config/name="ToolBuilder"
+config/icon="res://icon.png"
 
-[mono]
+[editor_plugins]
 
-debugger_agent/wait_for_debugger=true
-debugger_agent/wait_timeout=0
+enabled=PoolStringArray( "mono_debugger" )
 
 [rendering]
 
