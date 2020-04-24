@@ -15,19 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="EP Old"
-run/main_scene="res://scenes/Main.tscn"
+config/name="Mars Mission"
 config/icon="res://assets/icon.png"
-
-[display]
-
-window/size/width=1660
-window/size/height=940
-
-[mono]
-
-debugger_agent/wait_for_debugger=true
-debugger_agent/wait_timeout=0
 
 [rendering]
 
