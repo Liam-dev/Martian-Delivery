@@ -39,7 +39,7 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GodotSharp">
@@ -53,11 +53,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="interfaces\IDamageObject.cs" />
+    <Compile Include="interfaces\IShoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scenes\ArmedShip.cs" />
     <Compile Include="scenes\Main.cs" />
+    <Compile Include="scenes\Player.cs" />
+    <Compile Include="scenes\Ship.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="icon.ico" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
