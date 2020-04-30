@@ -1,12 +1,11 @@
 using Godot;
-using System;
 
 namespace MarsMission
 {
     public class Player : KinematicBody
     {
         // Camera varibles
-        private const float mouseSensitivity = 0.005F;
+        private const float mouseSensitivity = 0.006F;
         private float cameraAngle = 0;
         private InputEventMouseMotion mouseMotion;
 
@@ -20,7 +19,7 @@ namespace MarsMission
         private const float sprintMultiplier = 1.5f;
         private const int acceleration = 4;
         private const int deacceleration = 6;
-        private const int jumpSpeed = 4;      
+        private const int jumpSpeed = 4;
 
         private Vector3 velocity;
         private Vector3 rotation;
@@ -66,7 +65,7 @@ namespace MarsMission
                 }
 
                 mouseMotion.Relative = new Vector2();
-            }          
+            }
         }
 
         private void Walk(float delta)
