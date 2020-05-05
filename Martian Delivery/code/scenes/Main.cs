@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace MarsMission
+namespace MartianDelivery
 {
     public class Main : Spatial
     {

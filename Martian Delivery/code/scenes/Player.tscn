@@ -27,7 +27,7 @@ material = SubResource( 5 )
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="Body" type="MeshInstance" parent="."]
 layers = 2
 mesh = SubResource( 2 )
 material/0 = null

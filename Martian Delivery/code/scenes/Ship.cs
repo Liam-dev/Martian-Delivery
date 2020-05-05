@@ -1,22 +1,13 @@
 using Godot;
 using System;
 
-namespace MarsMission
+namespace MartianDelivery
 {
-    public class Ship : RigidBody, IDamageObject
+    public class Ship : RigidBody
     {
-        // Signals      
-        [Signal] delegate void SDestroyed();
-
-        // Exported members
-        [Export] public int MaxHealth;
         [Export] public int Thrust;       
 
         // Child Nodes
-        protected Spatial Thrusters
-        {
-            get { return (Spatial)GetNode("Thrusters"); }
-        }
         protected MeshInstance Mesh
         {
             get { return (MeshInstance)GetNode("Mesh"); }
@@ -26,17 +17,11 @@ namespace MarsMission
             get { return(CollisionShape)GetNode("CollisionShape"); }
         }
 
-        protected int health;
-
-        public bool Destroyed
-        {
-            get { return (health <= 0); }
-        }
+        protected (Ve)
 
         public Ship() { }
-        public Ship(int heath, int thrust)
+        public Ship(int thrust)
         {
-            MaxHealth = heath;
             Thrust = thrust;
         }
 
@@ -49,5 +34,12 @@ namespace MarsMission
         {
             base._Process(delta);
         }
+
+        protected void Hover()
+        {
+
+        }
+
+        protected void 
     }
 }

@@ -1,32 +1,33 @@
 using Godot;
+using System;
 
-namespace MarsMission
+namespace MartianDelivery
 {
     public class Player : KinematicBody
     {
         // Camera varibles
-        private const float mouseSensitivity = 0.006F;
+        [Export] private float mouseSensitivity = 0.006F;
         private float cameraAngle = 0;
         private InputEventMouseMotion mouseMotion;
 
         // Fly kinematic variables
-        private const int flySpeed = 5;
-        private const float flyAccerlation = 1.5f;
+        [Export] private int flySpeed = 5;
+        [Export] private float flyAccerlation = 1.5f;
 
         // Walk variables
-        private const float gravity = -9.8f;
-        private const int maxSpeed = 3;
-        private const float sprintMultiplier = 1.5f;
-        private const int acceleration = 4;
-        private const int deacceleration = 6;
-        private const int jumpSpeed = 4;
+        [Export] private float gravity = -9.8f;
+        [Export] private int maxSpeed = 3;
+        [Export] private float sprintMultiplier = 1.5f;
+        [Export] private int acceleration = 4;
+        [Export] private int deacceleration = 6;
+        [Export] private int jumpSpeed = 4;      
 
         private Vector3 velocity;
         private Vector3 rotation;
 
         // Child Nodes
         public Spatial Neck { get { return (Spatial)GetNode("Neck"); } }
-        private Spatial Head { get { return (Spatial)Neck.GetNode("Head"); } }
+        public Spatial Head { get { return (Spatial)Neck.GetNode("Head"); } }
         public Camera Camera { get { return (Camera)Head.GetNode("Camera"); } }
 
         // Called when the node enters the scene tree for the first time.
@@ -42,9 +43,9 @@ namespace MarsMission
             MouseMotion(mouseMotion);
         }
 
-        public override void _UnhandledInput(InputEvent @event)
+        public override void _UnhandledInput(InputEvent e)
         {
-            if (@event is InputEventMouseMotion motion && Input.GetMouseMode() == Input.MouseMode.Captured)
+            if (e is InputEventMouseMotion motion && Input.GetMouseMode() == Input.MouseMode.Captured)
             {
                 mouseMotion = motion;
             }
@@ -54,27 +55,27 @@ namespace MarsMission
         {
             if (motion.Relative.Length() > 0)
             {
-                //Neck.RotateY(-motion.Relative.x * mouseSensitivity);
-                RotateY(-motion.Relative.x * mouseSensitivity);
-
                 float angleChange = -motion.Relative.y * mouseSensitivity;
-                if ((angleChange + cameraAngle) < Mathf.Pi / 2 && (angleChange + cameraAngle) > -Mathf.Pi / 2)
+                float newAngle = angleChange + cameraAngle;
+                if ((newAngle) < Mathf.Pi / 2 && (newAngle) > -Mathf.Pi / 2)
                 {
                     Neck.RotateX(angleChange);
                     cameraAngle += angleChange;
                 }
 
+                RotateY(-motion.Relative.x * mouseSensitivity);
+
                 mouseMotion.Relative = new Vector2();
-            }
+            }          
         }
 
         private void Walk(float delta)
         {
-            // Reset rotation of the player
+            // Reset rotation of the player input
             rotation = new Vector3();
 
             // Get rotation of camera
-            Basis facing = Camera.GetCameraTransform().basis;
+            Basis facing = GetTransform().basis;
 
             // Get input
             if (Input.IsActionPressed("move_forward"))

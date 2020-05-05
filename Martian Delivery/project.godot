@@ -24,6 +24,10 @@ config/icon="res://assets/icon.png"
 window/size/fullscreen=true
 window/vsync/use_vsync=false
 
+[editor_plugins]
+
+enabled=PoolStringArray(  )
+
 [input]
 
 move_forward={
