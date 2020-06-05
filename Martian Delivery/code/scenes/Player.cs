@@ -17,10 +17,10 @@ namespace MartianDelivery
 		// Walk variables
 		[Export] private float gravity = -(float)ProjectSettings.GetSetting("physics/3d/default_gravity");
 		[Export] private int maxSpeed = 3;
-		[Export] private float sprintMultiplier = 1.5f;
+		[Export] private float sprintMultiplier = 8f;
 		[Export] private int acceleration = 4;
 		[Export] private int deacceleration = 6;
-		[Export] private int jumpSpeed = 3;      
+		[Export] private int jumpSpeed = 5;      
 
 		private Vector3 velocity;
 		private Vector3 rotation;

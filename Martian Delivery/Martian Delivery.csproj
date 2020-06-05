@@ -59,6 +59,7 @@
     <Compile Include="code\interfaces\IShoot.cs" />
     <Compile Include="code\scenes\Main.cs" />
     <Compile Include="code\scenes\Mars.cs" />
+    <Compile Include="code\scenes\Planet.cs" />
     <Compile Include="code\scenes\Player.cs" />
     <Compile Include="code\scenes\PlayerShip.cs" />
     <Compile Include="code\scenes\RigidBody.cs" />

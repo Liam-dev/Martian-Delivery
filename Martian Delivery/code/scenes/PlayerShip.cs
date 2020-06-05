@@ -44,6 +44,7 @@ namespace MartianDelivery
 		{
 			if (Input.IsActionPressed("drive"))
 			{
+				GD.Print("Hello");
 				ActivateThrusterSet(ThrustAction.Forward, 0.75f);
 			}
 			else
@@ -67,6 +68,7 @@ namespace MartianDelivery
 		// Called every frame. 'delta' is the elapsed time since the previous frame.
 		public override void _PhysicsProcess(float delta)
 		{
+
 			Control();
 			base._PhysicsProcess(delta);
 		}

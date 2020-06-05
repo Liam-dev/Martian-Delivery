@@ -59,28 +59,31 @@
 			<float name="DesignInflate64">16.187</float>
 		</varlist>
 		<varlist name="AM">
-			<float name="GenMap">3.454</float>
+			<float name="GenMap">3.39</float>
 		</varlist>
 		<varlist name="TN">
-			<float name="GenMap">0.921</float>
+			<float name="GenMap">0.938</float>
 		</varlist>
 		<varlist name="TX">
-			<float name="GenMap">8.484</float>
+			<float name="GenMap">8.407</float>
 		</varlist>
 	</varlist>
 	<varlist name="MeshExporter">
 		<bool name="TexCoordFlag">true</bool>
 		<bool name="PowerOfTwoFlag">false</bool>
-		<bool name="VertexNormalFlag">true</bool>
+		<bool name="VertexNormalFlag">false</bool>
 		<bool name="TileFlag">false</bool>
 		<int name="TileSizeWithOverlap">513</int>
 		<bool name="OriginCentreFlag">true</bool>
 		<int name="AxisMode">1</int>
 		<int name="FaceMode">0</int>
-		<float name="MaxError">2</float>
-		<varlist name="AuxMapList">		</varlist>
+		<float name="MaxError">1</float>
+		<varlist name="AuxMapList">
+			<void name="TN"></void>
+		</varlist>
 		<varlist name="FormatList">
 			<string name="TX">jpg</string>
+			<string name="TN">png</string>
 		</varlist>
 	</varlist>
 	<varlist name="Sapphire">
