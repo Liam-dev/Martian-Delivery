@@ -1,2 +1,2 @@
-# EP-Game
+# Martian Delivery
 Extended project game repository
