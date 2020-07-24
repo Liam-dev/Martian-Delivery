@@ -59,13 +59,13 @@
 			<float name="DesignInflate64">16.187</float>
 		</varlist>
 		<varlist name="AM">
-			<float name="GenMap">3.39</float>
+			<float name="GenMap">3.532</float>
 		</varlist>
 		<varlist name="TN">
-			<float name="GenMap">0.938</float>
+			<float name="GenMap">0.937</float>
 		</varlist>
 		<varlist name="TX">
-			<float name="GenMap">8.407</float>
+			<float name="GenMap">8.094</float>
 		</varlist>
 	</varlist>
 	<varlist name="MeshExporter">

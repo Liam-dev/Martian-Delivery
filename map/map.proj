@@ -25,11 +25,11 @@
 			<string name="MapType">HF</string>
 		</varlist>
 		<varlist name="AM">
-			<string name="Filename">map_AM.amf.gz</string>
+			<string name="Filename">map_AM.bmp</string>
 			<string name="MapType">AM</string>
 		</varlist>
 		<varlist name="TN">
-			<string name="Filename">map_TN.png</string>
+			<string name="Filename">map_TN.bmp</string>
 			<string name="MapType">TN</string>
 		</varlist>
 		<varlist name="TX">

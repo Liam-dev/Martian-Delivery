@@ -26,14 +26,6 @@ namespace MartianDelivery
 			{
 				GetTree().Quit();
 			}
-			else if (Input.IsActionJustPressed("perspective_first"))
-			{
-				((Player)GetNode("Player")).Camera.MakeCurrent();
-			}
-			else if (Input.IsActionJustPressed("perspective_third"))
-			{              
-				((Camera)GetNode("Camera")).MakeCurrent();
-			}
 		}
 	}
 }
