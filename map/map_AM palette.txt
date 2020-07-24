@@ -1,0 +1,5 @@
+R, G, B, Climate, Land type
+236, 230, 149, "Desert", "Deep desert",
+226, 207, 129, "Desert", "Desert rocks (3)",
+196, 177, 121, "Desert", "Desert cliffs",
+181, 158, 111, "Desert", "Desert cliffs (2)",

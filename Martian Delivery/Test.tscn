@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://code/scenes/Ship/PlayerShip/PlayerShip.tscn" type="PackedScene" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0117647, 0.396078, 0, 1 )
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 50, 50 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, -25 )
+
+[node name="Spatial" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="PlayerShip" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40778, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.731723, 0.163024, -0.66182, 0, 0.970976, 0.239177, 0.681602, 0.175012, -0.710485, -18.6375, 12.5073, -20.0302 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 0.982593, -0.18577, 0, 0.18577, 0.982593, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )

@@ -52,20 +52,30 @@
       <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharpEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="code\classes\Thruster.cs" />
     <Compile Include="code\interfaces\IDamageObject.cs" />
     <Compile Include="code\interfaces\IShoot.cs" />
+    <Compile Include="code\scenes\Building\Building.cs" />
+    <Compile Include="code\scenes\FollowCamera\FollowCamera.cs" />
+    <Compile Include="code\scenes\HoverSensor\HoverSensor.cs" />
     <Compile Include="code\scenes\Main.cs" />
-    <Compile Include="code\scenes\Mars.cs" />
-    <Compile Include="code\scenes\Planet.cs" />
-    <Compile Include="code\scenes\Player.cs" />
-    <Compile Include="code\scenes\PlayerShip.cs" />
-    <Compile Include="code\scenes\RigidBody.cs" />
-    <Compile Include="code\scenes\Ship.cs" />
+    <Compile Include="code\scenes\Planet\Planet.cs" />
+    <Compile Include="code\scenes\Player\Player.cs" />
+    <Compile Include="code\scenes\Ship\PlayerShip\CameraTarget.cs" />
+    <Compile Include="code\scenes\Ship\PlayerShip\PlayerShip.cs" />
+    <Compile Include="code\scenes\Ship\Ship.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="code\scenes\Building\PizzaPlace\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
