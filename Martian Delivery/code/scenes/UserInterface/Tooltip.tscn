@@ -1,0 +1,32 @@
+[gd_scene format=2]
+
+[node name="Tooltip" type="ColorRect"]
+margin_left = 820.0
+margin_top = 800.0
+margin_right = 1100.0
+margin_bottom = 840.0
+color = Color( 0.298039, 0.321569, 0.329412, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 280.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 34.0
+margin_top = 13.0
+margin_right = 246.0
+margin_bottom = 27.0
+text = "Talk to the Alien, Enter ship, etc.."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0

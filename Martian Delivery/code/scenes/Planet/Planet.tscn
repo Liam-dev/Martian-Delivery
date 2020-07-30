@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://worlddata/data.hterrain" type="Resource" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://code/scenes/Building/PizzaPlace/PizzaPlace.tscn" type="PackedScene" id=8]
 [ext_resource path="res://code/scenes/FollowCamera/FollowCamera.cs" type="Script" id=9]
 [ext_resource path="res://code/scenes/Ship/PlayerShip/CameraTarget.cs" type="Script" id=10]
+[ext_resource path="res://code/scenes/Alien/Alien.tscn" type="PackedScene" id=11]
 
 [node name="Planet" type="Spatial"]
 script = ExtResource( 5 )
@@ -38,7 +39,7 @@ ground/albedo_bump_3 = null
 ground/normal_roughness_3 = null
 
 [node name="PlayerShip" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.197452, 0, 0.980313, 0, 1, 0, -0.980313, 0, 0.197452, 1732.5, 175.167, 1453.31 )
+transform = Transform( 0.197452, 0, 0.980313, 0, 1, 0, -0.980313, 0, 0.197452, 1737.87, 182.528, 1464.06 )
 linear_damp = 0.85
 angular_damp = 0.7
 
@@ -47,7 +48,7 @@ transform = Transform( 1, -3.72529e-08, 0, 0, 0.966187, 0.257841, 0, -0.257841, 
 script = ExtResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-transform = Transform( 3, 0, 5.96046e-08, 0, 3, 0, -5.96046e-08, 0, 3, 1712.92, 175.167, 1467.16 )
+transform = Transform( -1.52171, 0, 2.58542, 0, 3, 0, -2.58542, 0, -1.52171, 1811.12, 179.283, 1477.27 )
 
 [node name="FollowCamera" type="InterpolatedCamera" parent="."]
 transform = Transform( 1, -1.49012e-08, 0, 0, 1, 0, 1.49012e-08, 0, 0, 1761.83, 191.446, 1459.22 )
@@ -59,5 +60,8 @@ script = ExtResource( 9 )
 
 [node name="PizzaPlace" parent="." instance=ExtResource( 8 )]
 transform = Transform( -0.930641, 0, 0.365933, 0, 1, 0, -0.365933, 0, -0.930641, 1812.58, 174.282, 1461.07 )
+
+[node name="Alien" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1.64063, 0, 1.14383, 0, 2, 0, -1.14383, 0, 1.64063, 1804.12, 179.01, 1442.81 )
 [connection signal="Abandoned" from="PlayerShip" to="FollowCamera" method="_on_PlayerShip_Abandoned"]
 [connection signal="Occupied" from="PlayerShip" to="FollowCamera" method="_on_PlayerShip_Occupied"]

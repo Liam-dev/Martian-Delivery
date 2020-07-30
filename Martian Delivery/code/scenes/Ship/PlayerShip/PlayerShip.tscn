@@ -6,7 +6,7 @@
 [ext_resource path="res://code/scenes/HoverSensor/HoverSensor.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 10, 4, 9 )
+extents = Vector3( 10.693, 4.4205, 9.23631 )
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.00784314, 0.560784, 0.74902, 1 )
@@ -20,7 +20,7 @@ roughness = 0.1
 [sub_resource type="QuadMesh" id=4]
 size = Vector2( 3.5, 3.5 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=5]
 
 [sub_resource type="ConvexPolygonShape" id=6]
 points = PoolVector3Array( -2.46828, 1.96838, 4.33325, -2.46828, 4.35786, 2.10363, -2.36392, 4.25, 4.08635, -2.34633, -2.22045e-16, -3.66033, -2.34633, -2.22045e-16, 2.08118, -2.30926, -0.420145, 5.28927, -2.19063, 4.2265, 6.59922, -2.17058, -0.2765, 6.52401, -1.92911, -0.5, 4.15096, -1.83244, -0.375106, -0.663133, -1.2973, 1.35701, -9.3091, -1.28871, -2.22045e-16, -9.2527, -1.24724, 1.5246, -8.83352, -0.954713, 3.85724, -1.97282, 0.939577, 3.70904, -2.40872, 0.94128, 3.85724, -1.97282, 1.06715, 3.3945, -3.25267, 1.28013, 2.22045e-16, -9.2527, 1.29298, 1.35577, -9.32771, 1.38997, 1.52202, -8.4456, 1.77368, 3.81305, -0.393086, 1.81923, -0.375106, -0.663133, 1.83894, 2.0809, -3.30074, 1.91419, 3.95, 1.53838, 1.92398, -0.5, 4.15096, 2.16023, -0.2765, 6.52401, 2.18171, 4.2265, 6.59922, 2.18685, -2.22045e-16, -3.66033, 2.30881, -0.420145, 5.28927 )
@@ -41,6 +41,7 @@ points = PoolVector3Array( 3.95, 1.69533, -1.90396, 4.22077, 1.6502, 2.26593, 4.
 mass = 2000.0
 gravity_scale = 2.5
 script = ExtResource( 3 )
+TooltipDescription = "This is a ship"
 
 [node name="SelectionArea" type="Area" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2902, -1.01019 )

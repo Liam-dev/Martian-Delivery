@@ -33,6 +33,7 @@ namespace MartianDelivery
 		public Spatial Head { get { return (Spatial)Neck.GetNode("Head"); } }
 		public Camera Camera { get { return (Camera)Head.GetNode("Camera"); } }
 		public RayCast LineOfSight { get { return (RayCast)Head.GetNode("LineOfSight"); } }
+		public UserInterface UserInterface { get { return (UserInterface)GetNode("UserInterface"); } }
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
@@ -47,12 +48,10 @@ namespace MartianDelivery
 			if (!driving)
 			{
 				Walk(delta);
-				//Fly(delta);
 				MouseMotion(mouseMotion);
 
 				if (Input.IsActionJustPressed("enter_vehicle"))
 				{
-					GD.Print(LineOfSight.IsColliding());
 					if (LineOfSight.IsColliding() && ((Node)LineOfSight.GetCollider()).GetParent() is PlayerShip vehicle)
 					{
 						EnterVehicle(vehicle);						
@@ -66,9 +65,26 @@ namespace MartianDelivery
 					AbandonVehicle();
 				}
 			}
+
+			CheckSelectables();
 		}
 
-		public override void _UnhandledInput(InputEvent e)
+		protected void CheckSelectables()
+		{
+			if (LineOfSight.IsColliding())
+			{
+				if (((Node)LineOfSight.GetCollider()).GetParent() is ISelectable selectable)
+				{
+					UserInterface.ShowTooltip(selectable.TooltipDescription);
+				}
+			}
+			else
+			{
+				UserInterface.HideTooltip();
+			}
+		}
+
+		public override void _Input(InputEvent e)
 		{
 			if (e is InputEventMouseMotion motion && Input.GetMouseMode() == Input.MouseMode.Captured)
 			{

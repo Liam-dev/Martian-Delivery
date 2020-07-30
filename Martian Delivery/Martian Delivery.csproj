@@ -57,9 +57,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="code\classes\Item\Item.cs" />
+    <Compile Include="code\classes\Item\Pizza\Pizza.cs" />
     <Compile Include="code\classes\Thruster.cs" />
     <Compile Include="code\interfaces\IDamageObject.cs" />
+    <Compile Include="code\interfaces\ISelectable.cs" />
     <Compile Include="code\interfaces\IShoot.cs" />
+    <Compile Include="code\scenes\Alien\Alien.cs" />
     <Compile Include="code\scenes\Building\Building.cs" />
     <Compile Include="code\scenes\FollowCamera\FollowCamera.cs" />
     <Compile Include="code\scenes\HoverSensor\HoverSensor.cs" />
@@ -69,6 +73,7 @@
     <Compile Include="code\scenes\Ship\PlayerShip\CameraTarget.cs" />
     <Compile Include="code\scenes\Ship\PlayerShip\PlayerShip.cs" />
     <Compile Include="code\scenes\Ship\Ship.cs" />
+    <Compile Include="code\scenes\UserInterface\UserInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
