@@ -20,12 +20,27 @@ namespace MartianDelivery
 		[Export] private float sprintMultiplier = 1.5f;
 		[Export] private int acceleration = 4;
 		[Export] private int deacceleration = 6;
-		[Export] private int jumpSpeed = 5;      
+		[Export] private int jumpSpeed = 5;
+		
+		public float PlaneRotation
+		{
+			get
+			{
+				if (driving)
+				{
+					return vehicle.GlobalTransform.basis.GetEuler().y;
+				}
+				else
+				{
+					return GlobalTransform.basis.GetEuler().y;
+				}				
+			}
+		}
 
 		private Vector3 velocity;
 		private Vector3 rotation;
-		private bool driving = false;
-		private PlayerShip vehicle;
+		public bool driving = false;
+		public PlayerShip vehicle;
 
 		// Child Nodes
 		public CollisionShape CollisionShape { get { return (CollisionShape)GetNode("CollisionShape"); } }
@@ -33,12 +48,16 @@ namespace MartianDelivery
 		public Spatial Head { get { return (Spatial)Neck.GetNode("Head"); } }
 		public Camera Camera { get { return (Camera)Head.GetNode("Camera"); } }
 		public RayCast LineOfSight { get { return (RayCast)Head.GetNode("LineOfSight"); } }
+		public UserInterface UserInterface { get { return (UserInterface)GetNode("UserInterface"); } }
+
+		private Inventory inventory;
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
 			Input.SetMouseMode(Input.MouseMode.Captured);
 			mouseMotion = new InputEventMouseMotion();
+			inventory = new Inventory();
 		}
 
 		// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,28 +66,50 @@ namespace MartianDelivery
 			if (!driving)
 			{
 				Walk(delta);
-				//Fly(delta);
 				MouseMotion(mouseMotion);
-
-				if (Input.IsActionJustPressed("enter_vehicle"))
-				{
-					GD.Print(LineOfSight.IsColliding());
-					if (LineOfSight.IsColliding() && ((Node)LineOfSight.GetCollider()).GetParent() is PlayerShip vehicle)
-					{
-						EnterVehicle(vehicle);						
-					}					
-				}
 			}
 			else
 			{
+				GlobalTransform = new Transform(GlobalTransform.basis, vehicle.GlobalTransform.origin);
+
 				if (Input.IsActionJustPressed("abandon_vehicle"))
 				{
 					AbandonVehicle();
 				}
 			}
+
+			CheckSelectables();
 		}
 
-		public override void _UnhandledInput(InputEvent e)
+		protected void CheckSelectables()
+		{
+			if (LineOfSight.IsColliding() && Visible)
+			{
+				Node collider = (Node)LineOfSight.GetCollider();
+				if (collider.GetParent() is ISelectable selectable && collider.Name == "SelectionArea")
+				{
+					UserInterface.Tooltip.Show(selectable.TooltipDescription);
+
+					if (Input.IsActionJustPressed("interact"))
+					{
+						if (!driving && collider.GetParent() is PlayerShip vehicle)
+						{
+							EnterVehicle(vehicle);
+						}
+					}
+				}
+				else
+				{
+					UserInterface.Tooltip.Fade();
+				}
+			}
+			else
+			{
+				UserInterface.Tooltip.Fade();
+			}
+		}
+
+		public override void _Input(InputEvent e)
 		{
 			if (e is InputEventMouseMotion motion && Input.GetMouseMode() == Input.MouseMode.Captured)
 			{
@@ -213,5 +254,7 @@ namespace MartianDelivery
 
 			MoveAndSlide(velocity);
 		}
+
+
 	}
 }

@@ -5,8 +5,10 @@ using System.Runtime.CompilerServices;
 
 namespace MartianDelivery
 {
-	public class PlayerShip : Ship
+	public class PlayerShip : Ship, ISelectable
 	{
+		[Export(PropertyHint.MultilineText)] public string TooltipDescription { get; set; }
+
 		[Export] private int yawThrust = 150000;
 
 		public MeshInstance Exhaust { get { return GetNode<MeshInstance>("Exhaust"); } }
@@ -130,7 +132,7 @@ namespace MartianDelivery
 				Control();
 			}
 			
-			UpdateExhaust();
+			//UpdateExhaust();
 			base._PhysicsProcess(delta);
 		}
 	}

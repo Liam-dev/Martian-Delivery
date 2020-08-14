@@ -3,7 +3,7 @@ using System;
 
 namespace MartianDelivery
 {
-	public class Main : Spatial
+	public class Main : Node
 	{
 		// Declare member variables here. Examples:
 		// private int a = 2;

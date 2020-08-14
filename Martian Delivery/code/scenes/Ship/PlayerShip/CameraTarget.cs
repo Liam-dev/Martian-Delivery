@@ -17,12 +17,11 @@ namespace MartianDelivery
 
 		// Called every frame. 'delta' is the elapsed time since the previous frame.
 		public override void _Process(float delta)
-		{
+		{				
 			Vector3 eulerAngles = GlobalTransform.basis.GetEuler();
 			Vector3 newAngles = new Vector3(eulerAngles.x, eulerAngles.y, 0);
 			Basis basis = new Basis(newAngles);
-			GlobalTransform = new Transform(basis, GlobalTransform.origin);
-
+			GlobalTransform = new Transform(basis, GlobalTransform.origin);			
 		}
 	}
 }
