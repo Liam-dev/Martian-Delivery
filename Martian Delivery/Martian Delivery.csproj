@@ -64,7 +64,9 @@
     <Compile Include="code\interfaces\ISelectable.cs" />
     <Compile Include="code\interfaces\IShoot.cs" />
     <Compile Include="code\scenes\Alien\Alien.cs" />
+    <Compile Include="code\classes\Inventory.cs" />
     <Compile Include="code\scenes\Building\Building.cs" />
+    <Compile Include="code\scenes\Building\PizzaPlace\PizzaPlace.cs" />
     <Compile Include="code\scenes\FollowCamera\FollowCamera.cs" />
     <Compile Include="code\scenes\HoverSensor\HoverSensor.cs" />
     <Compile Include="code\scenes\Main.cs" />
@@ -73,6 +75,8 @@
     <Compile Include="code\scenes\Ship\PlayerShip\CameraTarget.cs" />
     <Compile Include="code\scenes\Ship\PlayerShip\PlayerShip.cs" />
     <Compile Include="code\scenes\Ship\Ship.cs" />
+    <Compile Include="code\scenes\UserInterface\MiniMap\MiniMap.cs" />
+    <Compile Include="code\scenes\UserInterface\Tooltip\Tooltip.cs" />
     <Compile Include="code\scenes\UserInterface\UserInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

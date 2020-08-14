@@ -7,7 +7,7 @@ namespace MartianDelivery
 {
 	public class PlayerShip : Ship, ISelectable
 	{
-		[Export] public string TooltipDescription { get; set; }
+		[Export(PropertyHint.MultilineText)] public string TooltipDescription { get; set; }
 
 		[Export] private int yawThrust = 150000;
 

@@ -9,6 +9,5 @@ namespace MartianDelivery
     class Item
     {
         public string Name { get; set; }
-
     }
 }

@@ -65,10 +65,12 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.707107, 0, 0, 0.707107, 1, 1, 1, 1.7, 1, 0, 0.25, 0, 0.707107, 0, 0, 0.707107, 1, 1, 1, 4, 1, 0, 0, 0, 0.707107, 0, 0, 0.707107, 1, 1, 1 )
 
-[node name="Alien" type="StaticBody"]
+[node name="Alien" type="StaticBody" groups=[
+"MiniMapObjects",
+]]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 script = ExtResource( 1 )
-TooltipDescription = "This is an friendly Alien"
+TooltipDescription = "This is a friendly Alien"
 
 [node name="SelectionArea" type="Area" parent="."]
 

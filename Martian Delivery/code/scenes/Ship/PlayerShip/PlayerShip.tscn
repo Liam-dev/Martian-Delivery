@@ -37,11 +37,13 @@ points = PoolVector3Array( -9.95464, 1.6502, 0.0364635, -9.95464, 1.6502, 2.2659
 [sub_resource type="ConvexPolygonShape" id=10]
 points = PoolVector3Array( 3.95, 1.69533, -1.90396, 4.22077, 1.6502, 2.26593, 4.25343, 0.7, -1.69325, 4.25343, 0.7, 2.24325, 8.0878, 0.743452, -1.5122, 8.20181, 1.6502, -1.71593, 9.6609, 0.743512, 0.060903, 9.875, 0.707829, 2.21062, 9.95464, 1.6502, 0.0364635, 9.95464, 1.6502, 2.26593 )
 
-[node name="PlayerShip" instance=ExtResource( 1 )]
+[node name="PlayerShip" groups=[
+"MiniMapObjects",
+] instance=ExtResource( 1 )]
 mass = 2000.0
 gravity_scale = 2.5
 script = ExtResource( 3 )
-TooltipDescription = "This is a ship"
+TooltipDescription = "This is a spaceship that you can drive "
 
 [node name="SelectionArea" type="Area" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2902, -1.01019 )

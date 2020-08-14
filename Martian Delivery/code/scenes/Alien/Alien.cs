@@ -5,13 +5,15 @@ using System.Linq;
 
 namespace MartianDelivery
 {
-	public class Alien : StaticBody, ISelectable
+	class Alien : StaticBody, ISelectable
 	{
-		[Export] public string TooltipDescription { get; set; }
+		[Export(PropertyHint.MultilineText)] public string TooltipDescription { get; set; }
 
 		protected Area DetectionArea { get { return GetNode<Area>("DetectionArea"); } }
 		protected MeshInstance Head { get { return GetNode("CollisionShape").GetNode("Body").GetNode("Neck").GetNode<MeshInstance>("Head"); } }
 		protected Spatial[] Eyes { get { return new Spatial[] { Head.GetNode<Spatial>("LEye"), Head.GetNode<Spatial>("REye") }; } }
+
+		protected Inventory inventory;
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
@@ -25,7 +27,7 @@ namespace MartianDelivery
 			List<Player> players = new List<Player>();
 			foreach (PhysicsBody body in DetectionArea.GetOverlappingBodies())
 			{
-				if (body is Player player)
+				if (body is Player player && player.Visible)
 				{
 					players.Add(player);
 				}

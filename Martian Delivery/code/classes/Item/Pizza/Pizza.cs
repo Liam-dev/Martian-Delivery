@@ -8,5 +8,6 @@ namespace MartianDelivery
 {
     class Pizza : Item
     {
+        public List<string> Toppings; 
     }
 }
