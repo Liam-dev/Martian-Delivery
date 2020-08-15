@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/satelliteDishAntenna.obj-7e4b7850cfe9c6e3427a3c4363c58f7e.mesh"
+
+[deps]
+
+files=[ "res://.import/satelliteDishAntenna.obj-7e4b7850cfe9c6e3427a3c4363c58f7e.mesh" ]
+
+source_file="res://assets/models/space/satelliteDishAntenna.obj"
+dest_files=[ "res://.import/satelliteDishAntenna.obj-7e4b7850cfe9c6e3427a3c4363c58f7e.mesh", "res://.import/satelliteDishAntenna.obj-7e4b7850cfe9c6e3427a3c4363c58f7e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

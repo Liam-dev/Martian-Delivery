@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/metalTileCorner.obj-d17238bcb4083028ffa43d523b64ffcf.mesh"
+
+[deps]
+
+files=[ "res://.import/metalTileCorner.obj-d17238bcb4083028ffa43d523b64ffcf.mesh" ]
+
+source_file="res://assets/models/space/metalTileCorner.obj"
+dest_files=[ "res://.import/metalTileCorner.obj-d17238bcb4083028ffa43d523b64ffcf.mesh", "res://.import/metalTileCorner.obj-d17238bcb4083028ffa43d523b64ffcf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

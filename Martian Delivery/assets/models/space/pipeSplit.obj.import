@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pipeSplit.obj-72e578d27df5d392c327c78a3d80cce4.mesh"
+
+[deps]
+
+files=[ "res://.import/pipeSplit.obj-72e578d27df5d392c327c78a3d80cce4.mesh" ]
+
+source_file="res://assets/models/space/pipeSplit.obj"
+dest_files=[ "res://.import/pipeSplit.obj-72e578d27df5d392c327c78a3d80cce4.mesh", "res://.import/pipeSplit.obj-72e578d27df5d392c327c78a3d80cce4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

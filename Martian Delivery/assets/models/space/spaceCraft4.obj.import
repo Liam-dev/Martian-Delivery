@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/spaceCraft4.obj-42251d44c0d0237f9b7aac3b98da0042.mesh"
+
+[deps]
+
+files=[ "res://.import/spaceCraft4.obj-42251d44c0d0237f9b7aac3b98da0042.mesh" ]
+
+source_file="res://assets/models/space/spaceCraft4.obj"
+dest_files=[ "res://.import/spaceCraft4.obj-42251d44c0d0237f9b7aac3b98da0042.mesh", "res://.import/spaceCraft4.obj-42251d44c0d0237f9b7aac3b98da0042.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

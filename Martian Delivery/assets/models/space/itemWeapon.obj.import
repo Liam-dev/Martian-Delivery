@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/itemWeapon.obj-7938322d54ba42ec03a92a0c9c63b955.mesh"
+
+[deps]
+
+files=[ "res://.import/itemWeapon.obj-7938322d54ba42ec03a92a0c9c63b955.mesh" ]
+
+source_file="res://assets/models/space/itemWeapon.obj"
+dest_files=[ "res://.import/itemWeapon.obj-7938322d54ba42ec03a92a0c9c63b955.mesh", "res://.import/itemWeapon.obj-7938322d54ba42ec03a92a0c9c63b955.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

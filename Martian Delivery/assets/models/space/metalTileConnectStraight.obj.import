@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/metalTileConnectStraight.obj-3c8757ee910e832dec1d1d9823b17896.mesh"
+
+[deps]
+
+files=[ "res://.import/metalTileConnectStraight.obj-3c8757ee910e832dec1d1d9823b17896.mesh" ]
+
+source_file="res://assets/models/space/metalTileConnectStraight.obj"
+dest_files=[ "res://.import/metalTileConnectStraight.obj-3c8757ee910e832dec1d1d9823b17896.mesh", "res://.import/metalTileConnectStraight.obj-3c8757ee910e832dec1d1d9823b17896.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

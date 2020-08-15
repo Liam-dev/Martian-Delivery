@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/metalTileLarge.obj-41201853687bdca1250f9e924bb7a507.mesh"
+
+[deps]
+
+files=[ "res://.import/metalTileLarge.obj-41201853687bdca1250f9e924bb7a507.mesh" ]
+
+source_file="res://assets/models/space/metalTileLarge.obj"
+dest_files=[ "res://.import/metalTileLarge.obj-41201853687bdca1250f9e924bb7a507.mesh", "res://.import/metalTileLarge.obj-41201853687bdca1250f9e924bb7a507.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

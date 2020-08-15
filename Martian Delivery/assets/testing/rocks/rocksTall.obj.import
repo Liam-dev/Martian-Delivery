@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rocksTall.obj-c418a8b7dbce92f5a7cfcd84509697cb.mesh"
+
+[deps]
+
+files=[ "res://.import/rocksTall.obj-c418a8b7dbce92f5a7cfcd84509697cb.mesh" ]
+
+source_file="res://assets/testing/rocks/rocksTall.obj"
+dest_files=[ "res://.import/rocksTall.obj-c418a8b7dbce92f5a7cfcd84509697cb.mesh", "res://.import/rocksTall.obj-c418a8b7dbce92f5a7cfcd84509697cb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

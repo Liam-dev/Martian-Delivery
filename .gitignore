@@ -340,4 +340,3 @@ healthchecksdb
 
 # Godot and Mono
 .mono
-*.import
