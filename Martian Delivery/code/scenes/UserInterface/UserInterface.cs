@@ -6,6 +6,9 @@ namespace MartianDelivery
 	public class UserInterface : Control
 	{
 		public Tooltip Tooltip { get { return GetNode<Tooltip>("Tooltip"); } }
+		public Control Crosshair { get { return GetNode<Control>("Crosshair"); } }
+		public InventoryInterface InventoryInterface { get { return GetNode<InventoryInterface>("InventoryInterface"); } }
+		public PointCounter PointCounter { get { return GetNode<PointCounter>("PointCounter"); } }
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()

@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="code\classes\Item\Item.cs" />
     <Compile Include="code\classes\Item\Pizza\Pizza.cs" />
+    <Compile Include="code\classes\Order.cs" />
     <Compile Include="code\classes\Thruster.cs" />
     <Compile Include="code\interfaces\IDamageObject.cs" />
     <Compile Include="code\interfaces\ISelectable.cs" />
@@ -67,22 +68,29 @@
     <Compile Include="code\classes\Inventory.cs" />
     <Compile Include="code\scenes\Building\Building.cs" />
     <Compile Include="code\scenes\Building\PizzaPlace\PizzaPlace.cs" />
+    <Compile Include="code\scenes\Button\Button.cs" />
+    <Compile Include="code\scenes\ConsoleInterface\ConsoleInterface.cs" />
+    <Compile Include="code\scenes\Console\Console.cs" />
+    <Compile Include="code\scenes\Conveyor\Conveyor.cs" />
     <Compile Include="code\scenes\FollowCamera\FollowCamera.cs" />
     <Compile Include="code\scenes\HoverSensor\HoverSensor.cs" />
     <Compile Include="code\scenes\Main.cs" />
+    <Compile Include="code\scenes\PizzaBox\PizzaBox.cs" />
     <Compile Include="code\scenes\Planet\Planet.cs" />
     <Compile Include="code\scenes\Player\Player.cs" />
     <Compile Include="code\scenes\Ship\PlayerShip\CameraTarget.cs" />
     <Compile Include="code\scenes\Ship\PlayerShip\PlayerShip.cs" />
     <Compile Include="code\scenes\Ship\Ship.cs" />
+    <Compile Include="code\scenes\UserInterface\InventoryInterface\InventoryInterface.cs" />
+    <Compile Include="code\scenes\UserInterface\InventoryInterface\IventoryItem\InventoryItem.cs" />
     <Compile Include="code\scenes\UserInterface\MiniMap\MiniMap.cs" />
+    <Compile Include="code\scenes\UserInterface\PointCounter\PointCounter.cs" />
+    <Compile Include="code\scenes\UserInterface\SpeechBar\SpeechBar.cs" />
     <Compile Include="code\scenes\UserInterface\Tooltip\Tooltip.cs" />
     <Compile Include="code\scenes\UserInterface\UserInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="code\scenes\Building\PizzaPlace\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

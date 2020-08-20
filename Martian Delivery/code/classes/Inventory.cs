@@ -4,6 +4,6 @@ namespace MartianDelivery
 {
     class Inventory
     {
-        public List<Item> Items { get; set; }
+        public List<string> Items = new List<string>();
     }
 }

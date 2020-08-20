@@ -1,12 +1,14 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MartianDelivery
 {
 	public class Player : KinematicBody
 	{
 		// Camera varibles
-		[Export] private float mouseSensitivity = 0.006F;
+		[Export] private float mouseSensitivity = 0.005F;
 		private float cameraAngle = 0;
 		private InputEventMouseMotion mouseMotion;
 
@@ -42,6 +44,8 @@ namespace MartianDelivery
 		public bool driving = false;
 		public PlayerShip vehicle;
 
+		private bool watching = false;
+
 		// Child Nodes
 		public CollisionShape CollisionShape { get { return (CollisionShape)GetNode("CollisionShape"); } }
 		public Spatial Neck { get { return (Spatial)GetNode("Neck"); } }
@@ -49,6 +53,7 @@ namespace MartianDelivery
 		public Camera Camera { get { return (Camera)Head.GetNode("Camera"); } }
 		public RayCast LineOfSight { get { return (RayCast)Head.GetNode("LineOfSight"); } }
 		public UserInterface UserInterface { get { return (UserInterface)GetNode("UserInterface"); } }
+		public Timer Timer { get { return (Timer)GetNode("Timer"); } }
 
 		private Inventory inventory;
 
@@ -63,22 +68,28 @@ namespace MartianDelivery
 		// Called every frame. 'delta' is the elapsed time since the previous frame.
 		public override void _PhysicsProcess(float delta)
 		{
-			if (!driving)
+			CheckSelectables();
+
+			if (!(driving || watching))
 			{
+				UserInterface.Crosshair.Show();
 				Walk(delta);
 				MouseMotion(mouseMotion);
 			}
 			else
 			{
-				GlobalTransform = new Transform(GlobalTransform.basis, vehicle.GlobalTransform.origin);
+				UserInterface.Crosshair.Hide();
 
-				if (Input.IsActionJustPressed("abandon_vehicle"))
+				if (driving)
 				{
-					AbandonVehicle();
+					GlobalTransform = new Transform(GlobalTransform.basis, vehicle.GlobalTransform.origin);
+
+					if (Input.IsActionJustPressed("abandon_vehicle"))
+					{
+						AbandonVehicle();
+					}
 				}
 			}
-
-			CheckSelectables();
 		}
 
 		protected void CheckSelectables()
@@ -86,13 +97,15 @@ namespace MartianDelivery
 			if (LineOfSight.IsColliding() && Visible)
 			{
 				Node collider = (Node)LineOfSight.GetCollider();
-				if (collider.GetParent() is ISelectable selectable && collider.Name == "SelectionArea")
+				if (collider.Name == "SelectionArea" && collider.GetParent() is ISelectable selectable)
 				{
 					UserInterface.Tooltip.Show(selectable.TooltipDescription);
 
-					if (Input.IsActionJustPressed("interact"))
+					if (!driving && Input.IsActionJustPressed("interact"))
 					{
-						if (!driving && collider.GetParent() is PlayerShip vehicle)
+						selectable.Interact(this);
+
+						if (selectable is PlayerShip vehicle)
 						{
 							EnterVehicle(vehicle);
 						}
@@ -133,6 +146,52 @@ namespace MartianDelivery
 
 				mouseMotion.Relative = new Vector2();
 			}          
+		}
+
+		public void ReceiveItem(string item)
+		{
+			inventory.Items.Add(item);
+			UserInterface.InventoryInterface.AddItem(item);
+		}
+
+		public void GiveItem(string item)
+		{
+			inventory.Items.Remove(item);
+			UserInterface.InventoryInterface.RemoveItem(item);
+		}
+
+		public void Watch(Spatial thing, int duration)
+		{
+			LookAt(thing.GlobalTransform.origin, Vector3.Up);
+			watching = true;
+			Timer.WaitTime = duration;
+			Timer.Start();
+		}
+
+		private void _on_Timer_timeout()
+		{
+			watching = false;
+		}
+
+		public bool hasItems(List<string> items)
+		{
+			bool result = true;
+
+			foreach (string item in items)
+			{
+				if (!inventory.Items.Contains(item))
+				{
+					result = false;
+					break;
+				}
+			}
+
+			return result;
+		}
+
+		public void AddPoints(int points)
+		{
+			UserInterface.PointCounter.Points += points;
 		}
 
 		private void Walk(float delta)
@@ -205,7 +264,6 @@ namespace MartianDelivery
 		private void EnterVehicle(PlayerShip ship)
 		{
 			vehicle = ship;
-			vehicle.Occupy(this);
 			driving = true;
 			Visible = false;
 			CollisionShape.Disabled = true;

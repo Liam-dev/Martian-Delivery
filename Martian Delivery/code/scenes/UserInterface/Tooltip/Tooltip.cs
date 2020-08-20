@@ -22,9 +22,9 @@ namespace MartianDelivery
 
 		public void Show(string text)
 		{
+			Label.Text = text;
 			if (!Visible)
-			{
-				Label.Text = text;
+			{			
 				Show();
 				AnimationPlayer.Play("FadeIn");
 			}			

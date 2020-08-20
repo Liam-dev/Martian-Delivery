@@ -43,8 +43,8 @@ tracks/0/keys = {
 
 [node name="Tooltip" type="MarginContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 551.0
-margin_bottom = 60.0
+margin_right = -0.039978
+margin_bottom = -0.480003
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -57,8 +57,8 @@ __meta__ = {
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 541.0
-margin_bottom = 50.0
+margin_right = 33.0
+margin_bottom = 49.0
 texture = ExtResource( 1 )
 patch_margin_left = 5
 patch_margin_top = 5
@@ -68,18 +68,18 @@ patch_margin_bottom = 5
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 541.0
-margin_bottom = 50.0
+margin_right = 33.0
+margin_bottom = 49.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CenterContainer"]
-margin_right = 531.0
+margin_right = 23.0
 margin_bottom = 39.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0.266667, 0.729412, 1 )
-text = "Talk to the Alien, Enter ship, etc..."
+text = "T"
 __meta__ = {
 "_edit_use_anchors_": false
 }

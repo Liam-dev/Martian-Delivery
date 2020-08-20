@@ -7,5 +7,5 @@ sky_top_color = Color( 0.882353, 0.65098, 0.356863, 1 )
 background_mode = 2
 background_sky = SubResource( 1 )
 ambient_light_color = Color( 1, 1, 1, 1 )
-ambient_light_sky_contribution = 0.5
+ambient_light_sky_contribution = 0.3
 fog_color = Color( 0.898039, 0.65098, 0.388235, 1 )

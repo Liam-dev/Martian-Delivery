@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://code/scenes/ConsoleInterface/ConsoleInterface.cs" type="Script" id=1]
+[ext_resource path="res://assets/models/food/isometric/pizza.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_color = Color( 0.211765, 0.901961, 0.901961, 1 )
+font_data = ExtResource( 3 )
+
+[node name="ConsoleInterface" type="Control"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="TextureRect" parent="."]
+margin_left = 560.0
+margin_right = 1360.0
+margin_bottom = 800.0
+texture = ExtResource( 2 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.00012207
+split_offset = 650
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImageContainer" type="CenterContainer" parent="VSplitContainer"]
+margin_right = 1920.0
+margin_bottom = 650.0
+
+[node name="NameContainer" type="CenterContainer" parent="VSplitContainer"]
+margin_top = 662.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="Label" type="Label" parent="VSplitContainer/NameContainer"]
+margin_left = 801.0
+margin_top = 152.0
+margin_right = 1118.0
+margin_bottom = 265.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Pizza"
+__meta__ = {
+"_edit_use_anchors_": false
+}

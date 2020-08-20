@@ -64,5 +64,6 @@ transform = Transform( -0.930641, 0, 0.365933, 0, 1, 0, -0.365933, 0, -0.930641,
 
 [node name="Alien" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1.62789, 0, 1.16189, 0, 2, 0, -1.16189, 0, 1.62789, 1688.44, 166.228, 1415.57 )
+MartianName = "Trezok"
 [connection signal="Abandoned" from="PlayerShip" to="FollowCamera" method="_on_PlayerShip_Abandoned"]
 [connection signal="Occupied" from="PlayerShip" to="FollowCamera" method="_on_PlayerShip_Occupied"]

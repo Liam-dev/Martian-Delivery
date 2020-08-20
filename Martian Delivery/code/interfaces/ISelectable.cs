@@ -10,5 +10,7 @@ namespace MartianDelivery
     interface ISelectable
     {
         string TooltipDescription { get; set; }
+
+        void Interact(Player player);
     }
 }

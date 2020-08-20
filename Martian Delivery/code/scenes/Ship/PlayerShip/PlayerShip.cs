@@ -110,7 +110,12 @@ namespace MartianDelivery
 			//Exhaust.SetSurfaceMaterial(0, exhaustMaterial);
 		}
 
-		public void Occupy(Player driver)
+		public void Interact(Player player)
+		{
+			Occupy(player);
+		}
+
+		private void Occupy(Player driver)
 		{
 			occupied = true;
 			this.driver = driver;
