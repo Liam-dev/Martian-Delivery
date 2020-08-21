@@ -17,7 +17,7 @@ radius = 0.3
 mid_height = 0.5
 rings = 10
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=16]
 albedo_color = Color( 0.372549, 0.0470588, 0.419608, 1 )
 
 [sub_resource type="SphereMesh" id=6]
@@ -68,7 +68,7 @@ tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.707107, 0, 0, 0.707107, 1, 1, 1,
 [node name="Alien" type="StaticBody" groups=[
 "MiniMapObjects",
 ]]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 4.37114e-08, 0, -4.37114e-08, 1, 0, 0, 0 )
 script = ExtResource( 1 )
 TooltipDescription = "This is a friendly Alien"
 
@@ -88,10 +88,13 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0 )
 shape = SubResource( 3 )
 
+[node name="Hand" type="Position3D" parent="CollisionShape"]
+transform = Transform( -0.361909, 0.0548176, 0.475412, -0.470051, 0.0711976, -0.366037, -0.0898558, -0.593233, -7.74545e-08, -0.772971, 0.459266, 0.181575 )
+
 [node name="Body" type="MeshInstance" parent="CollisionShape"]
 transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 6.26924e-09, 0.143423 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 16 )
 
 [node name="Neck" type="Spatial" parent="CollisionShape/Body"]
 transform = Transform( 1, 0, 0, 0, 0.999866, 0.016353, 0, -0.016353, 0.999866, 0, -2.09818e-08, 0.480007 )

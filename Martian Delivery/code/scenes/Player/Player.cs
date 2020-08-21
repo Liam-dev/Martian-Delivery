@@ -62,12 +62,26 @@ namespace MartianDelivery
 		{
 			Input.SetMouseMode(Input.MouseMode.Captured);
 			mouseMotion = new InputEventMouseMotion();
-			inventory = new Inventory();
+			inventory = new Inventory();		
 		}
 
 		// Called every frame. 'delta' is the elapsed time since the previous frame.
 		public override void _PhysicsProcess(float delta)
 		{
+			/*
+			if (Input.IsActionJustPressed("pizza"))
+			{
+				for (int i = 0; i < 20; i++)
+				{
+					ReceiveItem("pizza");
+					ReceiveItem("waffle");
+					ReceiveItem("pancakes");
+					ReceiveItem("donut");
+				}
+				
+			}
+			*/
+
 			CheckSelectables();
 
 			if (!(driving || watching))
@@ -173,8 +187,10 @@ namespace MartianDelivery
 			watching = false;
 		}
 
-		public bool hasItems(List<string> items)
+		public bool HasItems(List<string> items)
 		{
+			// old method
+			/*
 			bool result = true;
 
 			foreach (string item in items)
@@ -187,6 +203,27 @@ namespace MartianDelivery
 			}
 
 			return result;
+			*/
+
+			bool result = true;
+			// list issue
+			List<string> playerItems = new List<string>(inventory.Items);
+
+			foreach (string item in items)
+			{
+				if (playerItems.Contains(item))
+				{
+					playerItems.Remove(item);
+				}
+				else
+				{
+					result = false;
+					break;
+				}
+			}
+
+			return result;
+
 		}
 
 		public void AddPoints(int points)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://worlddata/data.hterrain" type="Resource" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://code/scenes/FollowCamera/FollowCamera.cs" type="Script" id=9]
 [ext_resource path="res://code/scenes/Ship/PlayerShip/CameraTarget.cs" type="Script" id=10]
 [ext_resource path="res://code/scenes/Alien/Alien.tscn" type="PackedScene" id=11]
+[ext_resource path="res://code/scenes/Building/Outpost/Outpost.tscn" type="PackedScene" id=12]
+[ext_resource path="res://code/scenes/Building/Garage/Garage.tscn" type="PackedScene" id=13]
+[ext_resource path="res://code/scenes/Building/Base/Base.tscn" type="PackedScene" id=14]
+[ext_resource path="res://code/scenes/Building/Tower/Tower.tscn" type="PackedScene" id=15]
 
 [node name="Planet" type="Spatial"]
 script = ExtResource( 5 )
@@ -62,8 +66,20 @@ script = ExtResource( 9 )
 [node name="PizzaPlace" parent="." instance=ExtResource( 8 )]
 transform = Transform( -0.930641, 0, 0.365933, 0, 1, 0, -0.365933, 0, -0.930641, 1812.58, 174.282, 1461.07 )
 
-[node name="Alien" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1.62789, 0, 1.16189, 0, 2, 0, -1.16189, 0, 1.62789, 1688.44, 166.228, 1415.57 )
+[node name="Trezok" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.932003, 0, -1.76957, 0, 2, 0, 1.76957, 0, 0.932003, 1802.75, 175.563, 1473.65 )
 MartianName = "Trezok"
+
+[node name="Outpost" parent="." instance=ExtResource( 12 )]
+transform = Transform( -0.654596, 0, -0.755979, 0, 1, 0, 0.755979, 0, -0.654596, 1705.16, 164.579, 1394.98 )
+
+[node name="Garage" parent="." instance=ExtResource( 13 )]
+transform = Transform( -0.607819, 0, -0.794075, 0, 1, 0, 0.794075, 0, -0.607819, 1342.09, 125.753, 1504.77 )
+
+[node name="Tower" parent="." instance=ExtResource( 15 )]
+transform = Transform( 0.863554, 0, 0.504256, 0, 1, 0, -0.504256, 0, 0.863554, 1461.14, 166.327, 1954.31 )
+
+[node name="Base" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.642788, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642788, 1002.86, 212.026, 1724.17 )
 [connection signal="Abandoned" from="PlayerShip" to="FollowCamera" method="_on_PlayerShip_Abandoned"]
 [connection signal="Occupied" from="PlayerShip" to="FollowCamera" method="_on_PlayerShip_Occupied"]

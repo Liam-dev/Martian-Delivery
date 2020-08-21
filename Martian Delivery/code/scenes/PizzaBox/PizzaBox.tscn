@@ -67,7 +67,6 @@ tracks/0/keys = PoolRealArray( 0, 1, 0.490212, 0.0166385, 0, 0, 0, 0.503133, 0.8
 
 [node name="PizzaBox" type="StaticBody"]
 script = ExtResource( 2 )
-TooltipDescription = "A box containing pizza "
 
 [node name="SelectionArea" type="Area" parent="."]
 

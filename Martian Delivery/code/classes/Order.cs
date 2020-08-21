@@ -28,7 +28,7 @@ namespace MartianDelivery
                 string[] data = file.GetAsText().Split("\n".ToCharArray());
                 file.Close();
 
-                items = data[0].Split(", ".ToCharArray()).ToList();
+                items = data[0].Split(",".ToCharArray()).ToList();
                 reward = int.Parse(data[1]);
 
                 initialConversation = alien + " : " + data[2];

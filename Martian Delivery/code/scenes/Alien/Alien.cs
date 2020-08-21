@@ -8,6 +8,28 @@ namespace MartianDelivery
 	class Alien : StaticBody, ISelectable
 	{
 		[Export] public string MartianName { get; set; }
+		[Export] public Color Colour
+		{
+			get
+			{
+				if (Body.MaterialOverride != null)
+				{
+					return ((SpatialMaterial)Body.MaterialOverride).AlbedoColor;
+
+				}
+				else
+				{
+					return new Color(95, 12, 107, 255);
+				}
+			}
+
+			set
+			{				
+				SpatialMaterial material = (SpatialMaterial)ResourceLoader.Load<SpatialMaterial>("res://code/scenes/Alien/AlienMaterial.tres").Duplicate();
+				material.AlbedoColor = value;
+				Body.MaterialOverride = material;
+			}
+		}
 
 		[Export(PropertyHint.MultilineText)] public string TooltipDescription { get; set; }
 
@@ -15,6 +37,8 @@ namespace MartianDelivery
 		protected MeshInstance Head { get { return GetNode("CollisionShape").GetNode("Body").GetNode("Neck").GetNode<MeshInstance>("Head"); } }
 		protected Spatial[] Eyes { get { return new Spatial[] { Head.GetNode<Spatial>("LEye"), Head.GetNode<Spatial>("REye") }; } }
 		protected AudioStreamPlayer3D AudioPlayer { get { return (AudioStreamPlayer3D)GetNode("AudioPlayer"); } }
+		protected Position3D Hand { get { return GetNode("CollisionShape").GetNode<Position3D>("Hand"); } }
+		protected MeshInstance Body { get { return GetNode("CollisionShape").GetNode<MeshInstance>("Body"); } }
 
 		private int orderNumber;
 		private Order order;
@@ -67,7 +91,7 @@ namespace MartianDelivery
 				{
 					talkCount = 0;
 					Talk();
-					player.Watch(this, 5);
+					player.Watch(this, 3);
 				}
 			}
 			else
@@ -92,7 +116,7 @@ namespace MartianDelivery
 			{
 				talkCount = 0;
 				Talk();
-				player.Watch(this, 5);
+				player.Watch(this, 4);
 			}
 		}
 
@@ -101,6 +125,7 @@ namespace MartianDelivery
 			orderComplete = true;
 			player.AddPoints(order.reward);
 			TooltipDescription = order.completedConversation;
+			DisplayFood();
 
 			foreach (string item in order.items)
 			{
@@ -111,13 +136,27 @@ namespace MartianDelivery
 			{
 				talkCount = 0;
 				Talk();
-				player.Watch(this, 5);
+				player.Watch(this, 4);
 			}
 		}
 
 		private bool IsOrderCompleted(Player player)
 		{
-			return player.hasItems(order.items);
+			return player.HasItems(order.items);
+		}
+
+		private void DisplayFood()
+		{
+			Random random = new Random();
+			string item = order.items[random.Next(order.items.Count)];
+
+			PizzaBox box = (PizzaBox)ResourceLoader.Load<PackedScene>("res://code/scenes/PizzaBox/PizzaBox.tscn").Instance();
+			box.RemoveChild(GetNode("SelectionArea"));
+			Spatial foodItem = (Spatial)ResourceLoader.Load<PackedScene>("res://assets/models/food/" + item + ".dae").Instance();
+			box.AddFood(foodItem, item);
+			Hand.AddChild(box);
+			foodItem.Show();
+			box.AnimationPlayer.Play("Open");
 		}
 
 		private void Talk()
